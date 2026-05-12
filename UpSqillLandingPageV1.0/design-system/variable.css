@@ -1,0 +1,232 @@
+/*
+  UpSqill design tokens
+  Import this file before theme.css and before route-level styles.
+
+  Token layers:
+  - upsqill.tokens: raw values, semantic aliases, compatibility aliases
+*/
+
+@layer upsqill.tokens {
+  :root {
+    color-scheme: light;
+
+    /* Brand primitives */
+    --upsqill-color-white: #ffffff;
+    --upsqill-color-black: #000000;
+    --upsqill-color-ink-900: #17191c;
+    --upsqill-color-ink-800: #2a2d33;
+    --upsqill-color-fog-50: #f7f7f8;
+    --upsqill-color-stone-700: #4c4c4c;
+    --upsqill-color-steel-500: #777b86;
+    --upsqill-color-steel-300: #a3a6af;
+    --upsqill-color-dusk-400: #8b8c8d;
+    --upsqill-color-blue-500: #20aeea;
+    --upsqill-color-navy-700: #24529b;
+    --upsqill-color-terracotta-800: #5d2a1a;
+    --upsqill-color-terracotta-500: #a06450;
+    --upsqill-color-mist-100: #fbe1d1;
+    --upsqill-color-mist-50: #fff1e3;
+    --upsqill-color-peach-300: #f5b89c;
+
+    /* Semantic colors */
+    --upsqill-color-canvas: var(--upsqill-color-white);
+    --upsqill-color-surface: var(--upsqill-color-white);
+    --upsqill-color-surface-muted: var(--upsqill-color-fog-50);
+    --upsqill-color-surface-warm: var(--upsqill-color-mist-100);
+    --upsqill-color-surface-warm-soft: var(--upsqill-color-mist-50);
+    --upsqill-color-surface-inverse: var(--upsqill-color-ink-900);
+    --upsqill-color-text: var(--upsqill-color-ink-900);
+    --upsqill-color-text-strong: var(--upsqill-color-black);
+    --upsqill-color-text-muted: var(--upsqill-color-stone-700);
+    --upsqill-color-text-subtle: var(--upsqill-color-steel-500);
+    --upsqill-color-text-disabled: var(--upsqill-color-steel-300);
+    --upsqill-color-text-inverse: var(--upsqill-color-white);
+    --upsqill-color-brand-primary: var(--upsqill-color-blue-500);
+    --upsqill-color-brand-secondary: var(--upsqill-color-navy-700);
+    --upsqill-color-brand-warm: var(--upsqill-color-terracotta-800);
+    --upsqill-color-border-subtle: rgba(23, 25, 28, 0.08);
+    --upsqill-color-border-muted: rgba(23, 25, 28, 0.12);
+    --upsqill-color-border-strong: rgba(23, 25, 28, 0.18);
+    --upsqill-color-border-inverse: rgba(255, 255, 255, 0.1);
+    --upsqill-color-focus-ring: rgba(32, 174, 234, 0.32);
+    --upsqill-color-focus-field: rgba(32, 174, 234, 0.14);
+    --upsqill-color-blue-soft: rgba(32, 174, 234, 0.12);
+    --upsqill-color-navy-soft: rgba(36, 82, 155, 0.12);
+    --upsqill-color-warm-soft: rgba(93, 42, 26, 0.12);
+    --upsqill-color-glass: rgba(255, 255, 255, 0.78);
+    --upsqill-color-glass-strong: rgba(255, 255, 255, 0.86);
+    --upsqill-color-header-glass: rgba(255, 255, 255, 0.85);
+    --upsqill-color-dark-copy: rgba(255, 255, 255, 0.72);
+    --upsqill-color-dark-muted: rgba(255, 255, 255, 0.5);
+
+    /* Gradients */
+    --upsqill-gradient-brand: linear-gradient(135deg, #20aeea 0%, #24529b 100%);
+    --upsqill-gradient-brand-dark: linear-gradient(135deg, #17191c 0%, #2a2d33 100%);
+    --upsqill-gradient-warm: linear-gradient(135deg, #fbe1d1 0%, #f5b89c 100%);
+    --upsqill-gradient-warm-section: linear-gradient(135deg, #fbe1d1 0%, #fff1e3 100%);
+    --upsqill-gradient-mesh: radial-gradient(at 20% 30%, rgba(32, 174, 234, 0.18) 0px, transparent 50%),
+      radial-gradient(at 80% 20%, rgba(36, 82, 155, 0.15) 0px, transparent 50%),
+      radial-gradient(at 70% 80%, rgba(251, 225, 209, 0.5) 0px, transparent 50%);
+    --upsqill-gradient-grid: linear-gradient(rgba(23, 25, 28, 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(23, 25, 28, 0.04) 1px, transparent 1px);
+
+    /* Typography */
+    --upsqill-font-sans: "Sohne", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --upsqill-font-serif: "Signifier", Georgia, "Times New Roman", serif;
+    --upsqill-font-thai: "Sarabun", "Noto Sans Thai", "Th Sarabun New", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --upsqill-font-body: var(--upsqill-font-sans);
+    --upsqill-font-display: var(--upsqill-font-serif);
+    --upsqill-font-weight-regular: 400;
+    --upsqill-font-weight-medium: 500;
+    --upsqill-font-weight-semibold: 600;
+    --upsqill-font-weight-bold: 700;
+    --upsqill-letter-spacing-normal: 0;
+    --upsqill-line-height-flat: 1;
+    --upsqill-line-height-tight: 1.08;
+    --upsqill-line-height-heading: 1.18;
+    --upsqill-line-height-body: 1.5;
+    --upsqill-line-height-copy: 1.6;
+    --upsqill-line-height-thai: 1.72;
+    --upsqill-text-2xs: 11px;
+    --upsqill-text-xs: 12px;
+    --upsqill-text-sm: 13px;
+    --upsqill-text-md: 14px;
+    --upsqill-text-base: 16px;
+    --upsqill-text-lg: 17px;
+    --upsqill-text-xl: 19px;
+    --upsqill-text-title-sm: 20px;
+    --upsqill-text-title: 22px;
+    --upsqill-text-title-lg: 30px;
+    --upsqill-text-display-sm: 36px;
+    --upsqill-text-display-md: 48px;
+    --upsqill-text-display-lg: 72px;
+    --upsqill-text-stat: 52px;
+    --upsqill-text-score: 60px;
+
+    /* Spacing scale */
+    --upsqill-space-0: 0;
+    --upsqill-space-1: 2px;
+    --upsqill-space-2: 4px;
+    --upsqill-space-3: 6px;
+    --upsqill-space-4: 8px;
+    --upsqill-space-5: 10px;
+    --upsqill-space-6: 12px;
+    --upsqill-space-7: 14px;
+    --upsqill-space-8: 16px;
+    --upsqill-space-9: 18px;
+    --upsqill-space-10: 20px;
+    --upsqill-space-11: 22px;
+    --upsqill-space-12: 24px;
+    --upsqill-space-14: 28px;
+    --upsqill-space-16: 32px;
+    --upsqill-space-18: 36px;
+    --upsqill-space-20: 40px;
+    --upsqill-space-24: 48px;
+    --upsqill-space-28: 56px;
+    --upsqill-space-32: 64px;
+    --upsqill-space-36: 72px;
+    --upsqill-space-40: 80px;
+    --upsqill-space-48: 96px;
+    --upsqill-space-60: 120px;
+    --upsqill-space-80: 160px;
+
+    /* Layout */
+    --upsqill-page-max-width: 1280px;
+    --upsqill-content-max-width: 780px;
+    --upsqill-content-wide-width: 980px;
+    --upsqill-gutter-desktop: 24px;
+    --upsqill-gutter-mobile: 16px;
+    --upsqill-section-gap: 96px;
+    --upsqill-section-gap-mobile: 72px;
+    --upsqill-grid-gap: 18px;
+    --upsqill-grid-gap-lg: 56px;
+    --upsqill-header-top: 16px;
+    --upsqill-header-height: 64px;
+
+    /* Radius */
+    --upsqill-radius-0: 0;
+    --upsqill-radius-1: 2px;
+    --upsqill-radius-2: 6px;
+    --upsqill-radius-3: 8px;
+    --upsqill-radius-4: 10px;
+    --upsqill-radius-5: 12px;
+    --upsqill-radius-6: 14px;
+    --upsqill-radius-7: 16px;
+    --upsqill-radius-8: 18px;
+    --upsqill-radius-card: 24px;
+    --upsqill-radius-sheet: 28px;
+    --upsqill-radius-pill: 999px;
+    --upsqill-radius-round: 50%;
+
+    /* Borders and shadows */
+    --upsqill-border-width: 1px;
+    --upsqill-shadow-header: rgba(4, 23, 43, 0.04) 0 10px 40px;
+    --upsqill-shadow-header-scrolled: rgba(4, 23, 43, 0.1) 0 14px 50px;
+    --upsqill-shadow-subtle: rgba(4, 23, 43, 0.05) 0 0 0 1px, rgba(0, 0, 0, 0.08) 0 18px 25px -8px, rgba(0, 0, 0, 0.06) 0 8px 10px -6px;
+    --upsqill-shadow-elevated: rgba(4, 23, 43, 0.06) 0 0 0 1px, rgba(0, 0, 0, 0.12) 0 30px 60px -12px, rgba(0, 0, 0, 0.1) 0 18px 36px -10px;
+    --upsqill-shadow-glow-blue: 0 20px 60px -20px rgba(32, 174, 234, 0.45);
+    --upsqill-shadow-hover: 0 10px 24px -8px rgba(0, 0, 0, 0.25);
+    --upsqill-shadow-warm-hover: 0 12px 30px -10px rgba(93, 42, 26, 0.2);
+
+    /* Motion */
+    --upsqill-ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+    --upsqill-duration-fast: 160ms;
+    --upsqill-duration-base: 200ms;
+    --upsqill-duration-medium: 300ms;
+    --upsqill-duration-slow: 400ms;
+    --upsqill-duration-reveal: 800ms;
+    --upsqill-duration-data: 1400ms;
+    --upsqill-motion-float-y: 14px;
+    --upsqill-motion-reveal-y: 40px;
+
+    /* Z-index */
+    --upsqill-z-base: 0;
+    --upsqill-z-raised: 1;
+    --upsqill-z-sticky: 20;
+    --upsqill-z-overlay: 30;
+
+    /* Breakpoints as reference values for tooling and docs */
+    --upsqill-breakpoint-sm: 640px;
+    --upsqill-breakpoint-md: 900px;
+    --upsqill-breakpoint-lg: 1120px;
+
+    /*
+      Compatibility aliases used by the current landing page.
+      These allow future migration from styles.css without renaming every token.
+    */
+    --color-canvas: var(--upsqill-color-canvas);
+    --color-ink: var(--upsqill-color-text);
+    --color-graphite: var(--upsqill-color-text-strong);
+    --color-warm-mist: var(--upsqill-color-surface-warm);
+    --color-terracotta: var(--upsqill-color-brand-warm);
+    --color-fog: var(--upsqill-color-surface-muted);
+    --color-muted-stone: var(--upsqill-color-text-muted);
+    --color-light-steel: var(--upsqill-color-text-subtle);
+    --color-hint-of-grey: var(--upsqill-color-text-disabled);
+    --color-dusk-link: var(--upsqill-color-dusk-400);
+    --color-brand-blue: var(--upsqill-color-brand-primary);
+    --color-brand-navy: var(--upsqill-color-brand-secondary);
+    --gradient-brand: var(--upsqill-gradient-brand);
+    --gradient-warm: var(--upsqill-gradient-warm);
+    --gradient-mesh: var(--upsqill-gradient-mesh);
+    --font-sohne: var(--upsqill-font-sans);
+    --font-signifier: var(--upsqill-font-serif);
+    --font-thai: var(--upsqill-font-thai);
+    --page-max-width: var(--upsqill-page-max-width);
+    --section-gap: var(--upsqill-section-gap);
+    --radius-cards: var(--upsqill-radius-card);
+    --radius-images: var(--upsqill-radius-5);
+    --radius-inputs: var(--upsqill-radius-7);
+    --radius-buttons: var(--upsqill-radius-pill);
+    --shadow-subtle: var(--upsqill-shadow-subtle);
+    --shadow-elevated: var(--upsqill-shadow-elevated);
+    --shadow-glow-blue: var(--upsqill-shadow-glow-blue);
+    --ease-out: var(--upsqill-ease-out);
+  }
+
+  body[data-lang="th"] {
+    --upsqill-font-body: var(--upsqill-font-thai);
+    --upsqill-font-display: var(--upsqill-font-thai);
+    --upsqill-line-height-body: var(--upsqill-line-height-thai);
+  }
+}

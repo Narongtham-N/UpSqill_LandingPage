@@ -1,0 +1,1092 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="UpSqill helps Dek70 students discover the right faculty, diagnose skill gaps, and improve exam performance with a personalized AI-powered learning roadmap."
+    >
+    <title>UpSqill | AI-Powered Roadmap to University Success</title>
+    <link rel="icon" type= "image/png" href="assets/logos/favicon.png">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body data-lang="en">
+    <header class="site-header" data-header>
+      <a class="brand" href="#top" aria-label="UpSqill home">
+        <img src="assets/logos/upskill-logo-original-cropped.png" alt="UpSqill">
+      </a>
+      <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false" data-nav-toggle>
+        <span></span>
+        <span></span>
+      </button>
+      <nav class="site-nav" data-nav>
+        <a href="#problem" data-i18n="nav.problems">Problems</a>
+        <a href="#how-it-works" data-i18n="nav.how">How it works</a>
+        <a href="#insights" data-i18n="nav.insights">Insights</a>
+        <a href="#features" data-i18n="nav.features">Features</a>
+        <a href="#parents" data-i18n="nav.parents">Parents</a>
+        <a href="#faq" data-i18n="nav.faq">FAQ</a>
+      </nav>
+      <div class="header-actions">
+        <button class="language-toggle" type="button" aria-label="Switch language to Thai" aria-pressed="false" data-lang-toggle>
+          <span data-lang-option="en">EN</span>
+          <span data-lang-option="th">TH</span>
+        </button>
+        <a class="header-cta" href="#diagnostic">
+          <span data-i18n="cta.startDiagnostic">Start Free Diagnostic</span>
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+            <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+    </header>
+
+    <main id="top">
+      <!-- HERO -->
+      <section class="hero" aria-labelledby="hero-title">
+        <!-- Animated background blobs -->
+        <div class="blob-field" aria-hidden="true">
+          <div class="blob blob-1"></div>
+          <div class="blob blob-2"></div>
+          <div class="blob blob-3"></div>
+          <div class="grid-overlay"></div>
+        </div>
+
+        <!-- 3D scene with depth panels -->
+        <div class="hero-scene" aria-hidden="true">
+          <canvas id="hero-canvas"></canvas>
+
+          <!-- Floating geometric 3D shapes -->
+          <div class="float-shape shape-cube" data-depth="20">
+            <div class="cube">
+              <div class="cube-face cube-face-front"></div>
+              <div class="cube-face cube-face-back"></div>
+              <div class="cube-face cube-face-right"></div>
+              <div class="cube-face cube-face-left"></div>
+              <div class="cube-face cube-face-top"></div>
+              <div class="cube-face cube-face-bottom"></div>
+            </div>
+          </div>
+
+          <div class="float-shape shape-sphere" data-depth="-18">
+            <div class="sphere"></div>
+          </div>
+
+          <div class="float-shape shape-pyramid" data-depth="14">
+            <div class="pyramid">
+              <div class="pyramid-face"></div>
+              <div class="pyramid-face"></div>
+              <div class="pyramid-face"></div>
+              <div class="pyramid-face"></div>
+            </div>
+          </div>
+
+          <div class="float-shape shape-ring" data-depth="-12">
+            <svg viewBox="0 0 120 120" width="120" height="120">
+              <defs>
+                <linearGradient id="ringGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#20aeea"/>
+                  <stop offset="100%" stop-color="#24529b"/>
+                </linearGradient>
+              </defs>
+              <circle cx="60" cy="60" r="48" fill="none" stroke="url(#ringGrad)" stroke-width="6" stroke-dasharray="220 80" stroke-linecap="round"/>
+            </svg>
+          </div>
+
+          <div class="scene-panel scene-panel-score" data-depth="12">
+            <div class="panel-head">
+              <span class="panel-label" data-i18n="hero.panel.readiness">Readiness score</span>
+              <span class="panel-trend trend-up">
+                <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 7l3-3 3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                +8
+              </span>
+            </div>
+            <strong data-counter data-target="72">0</strong>
+            <span class="panel-suffix" data-i18n="hero.panel.readySuffix">% ready</span>
+            <div class="meter"><span style="width: 72%"></span></div>
+            <small data-i18n="hero.panel.targetGap">13 points from target</small>
+          </div>
+
+          <div class="scene-panel scene-panel-skills" data-depth="-8">
+            <span class="panel-label" data-i18n="hero.panel.priority">Priority skills</span>
+            <div class="skill-row">
+              <span class="skill-icon" style="background: rgba(32,174,234,0.12); color:#20aeea;">∑</span>
+              <div class="skill-meta"><b data-i18n="hero.skill.algebra">Algebra</b><small data-i18n="hero.skill.highImpact">High impact</small></div>
+              <div class="skill-bar"><i style="width: 84%; background:#20aeea;"></i></div>
+            </div>
+            <div class="skill-row">
+              <span class="skill-icon" style="background: rgba(36,82,155,0.12); color:#24529b;">A</span>
+              <div class="skill-meta"><b data-i18n="hero.skill.reading">Reading inference</b><small data-i18n="hero.skill.nextFocus">Next focus</small></div>
+              <div class="skill-bar"><i style="width: 56%; background:#24529b;"></i></div>
+            </div>
+            <div class="skill-row">
+              <span class="skill-icon" style="background: rgba(93,42,26,0.12); color:#5d2a1a;">G</span>
+              <div class="skill-meta"><b data-i18n="hero.skill.grammar">Grammar logic</b><small data-i18n="hero.skill.review">Review</small></div>
+              <div class="skill-bar"><i style="width: 38%; background:#5d2a1a;"></i></div>
+            </div>
+          </div>
+
+          <div class="scene-panel scene-panel-roadmap" data-depth="16">
+            <span class="panel-label" data-i18n="hero.panel.roadmap">4-week roadmap</span>
+            <ol>
+              <li class="done"><span></span><b data-i18n="hero.roadmap.diagnose">Diagnose</b></li>
+              <li class="done"><span></span><b data-i18n="hero.roadmap.focus">Focus skills</b></li>
+              <li class="active"><span></span><b data-i18n="hero.roadmap.practice">Adaptive practice</b></li>
+              <li><span></span><b data-i18n="hero.roadmap.track">Track growth</b></li>
+            </ol>
+          </div>
+
+          <div class="scene-chip scene-chip-goal" data-depth="-14">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1l1.8 3.6 4 .6-2.9 2.8.7 4L7 10.1l-3.6 1.9.7-4L1.2 5.2l4-.6L7 1z" fill="#5d2a1a"/></svg>
+            <span data-i18n="hero.chip.goal">Dream faculty: Engineering</span>
+          </div>
+          <div class="scene-chip scene-chip-parent" data-depth="10">
+            <span class="chip-pulse"></span>
+            <span data-i18n="hero.chip.parent">Parent insight ready</span>
+          </div>
+        </div>
+
+        <div class="hero-content">
+          <div class="eyebrow eyebrow-pill">
+            <span class="dot-pulse"></span>
+            <span data-i18n="hero.eyebrow">Built for Dek70 university preparation</span>
+          </div>
+          <h1 id="hero-title" data-i18n-html="hero.title">
+            Your AI-Powered Roadmap to <span class="text-gradient">University Success</span>
+          </h1>
+          <p class="hero-subhead" data-i18n="hero.subhead">
+            UpSqill helps Thai high school students discover the right faculty, diagnose their weaknesses,
+            and improve exam performance through personalized learning guidance.
+          </p>
+          <p class="hero-support" data-i18n="hero.support">
+            No more studying blindly. No more confusion about what to improve next.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#diagnostic">
+              <span data-i18n="cta.startDiagnostic">Start Free Diagnostic</span>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <a class="button button-secondary" href="#how-it-works">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.4"/><path d="M6.5 5.5l4 2.5-4 2.5z" fill="currentColor"/></svg>
+              <span data-i18n="cta.seeHow">See How It Works</span>
+            </a>
+          </div>
+          <ul class="trust-pills" aria-label="Trust indicators">
+            <li>
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1l2 4 4 .6-3 2.9.7 4L7 10.5l-3.7 2L4 8.5 1 5.6 5 5z" fill="#20aeea"/></svg>
+              <span data-i18n="hero.trust.ai">AI-powered guidance</span>
+            </li>
+            <li>
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7l3 3 7-7" stroke="#24529b" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span data-i18n="hero.trust.research">Research-driven learning</span>
+            </li>
+            <li>
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="5" stroke="#5d2a1a" stroke-width="1.4"/><circle cx="7" cy="7" r="2" fill="#5d2a1a"/></svg>
+              <span data-i18n="hero.trust.thai">Designed for Thai admission</span>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- STATS BANNER -->
+      <section class="stats-banner reveal" aria-label="UpSqill at a glance">
+        <div class="stat">
+          <strong data-counter data-target="92" data-suffix="%">0</strong>
+          <span data-i18n="stats.focus">students see clearer focus</span>
+        </div>
+        <div class="stat">
+          <strong data-counter data-target="5" data-suffix="x">0</strong>
+          <span data-i18n="stats.practice">more efficient practice</span>
+        </div>
+        <div class="stat">
+          <strong data-counter data-target="13" data-suffix="+">0</strong>
+          <span data-i18n="stats.score">average score points gained</span>
+        </div>
+        <div class="stat">
+          <strong data-counter data-target="100" data-suffix="%">0</strong>
+          <span data-i18n="stats.personalized">personalized to each student</span>
+        </div>
+      </section>
+
+      <!-- PROBLEM -->
+      <section class="section section-problem reveal" id="problem" aria-labelledby="problem-title">
+        <div class="section-heading">
+          <span class="eyebrow" data-i18n="problem.eyebrow">The real problem</span>
+          <h2 id="problem-title" data-i18n-html="problem.title">Preparing for University Shouldn't Feel This <em>Confusing</em></h2>
+          <p data-i18n="problem.copy">
+            Many students spend hours studying, joining classes, and practicing questions without knowing
+            which skills actually hold them back.
+          </p>
+        </div>
+        <div class="pain-grid">
+          <article class="pain-card tilt">
+            <div class="pain-illu">
+              <svg viewBox="0 0 80 80" fill="none"><circle cx="40" cy="40" r="34" fill="rgba(32,174,234,0.08)"/><path d="M40 24v18l12 8" stroke="#24529b" stroke-width="2.5" stroke-linecap="round"/><circle cx="40" cy="40" r="22" stroke="#20aeea" stroke-width="2" stroke-dasharray="4 4"/></svg>
+            </div>
+            <span class="card-index">01</span>
+            <h3 data-i18n="problem.card1.title">"I don't know which faculty fits me."</h3>
+            <p data-i18n="problem.card1.copy">Connect interests, strengths, scores, and future goals into clearer university direction.</p>
+          </article>
+          <article class="pain-card tilt">
+            <div class="pain-illu">
+              <svg viewBox="0 0 80 80" fill="none"><rect x="14" y="50" width="10" height="18" rx="2" fill="#fbe1d1"/><rect x="28" y="40" width="10" height="28" rx="2" fill="#5d2a1a"/><rect x="42" y="46" width="10" height="22" rx="2" fill="#fbe1d1"/><rect x="56" y="34" width="10" height="34" rx="2" fill="#5d2a1a"/><path d="M14 32l14 4 14-12 14 6" stroke="#24529b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+            </div>
+            <span class="card-index">02</span>
+            <h3 data-i18n="problem.card2.title">"I study hard but my scores don't improve."</h3>
+            <p data-i18n="problem.card2.copy">See the hidden weak skills that make extra practice feel inefficient.</p>
+          </article>
+          <article class="pain-card tilt">
+            <div class="pain-illu">
+              <svg viewBox="0 0 80 80" fill="none"><rect x="20" y="22" width="40" height="40" rx="6" stroke="#24529b" stroke-width="2" fill="rgba(36,82,155,0.05)"/><path d="M28 34h24M28 42h18M28 50h14" stroke="#20aeea" stroke-width="2" stroke-linecap="round"/><circle cx="60" cy="22" r="6" fill="#5d2a1a"/><path d="M58 22l1.5 1.5L62 21" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </div>
+            <span class="card-index">03</span>
+            <h3 data-i18n="problem.card3.title">"I don't know what to focus on next."</h3>
+            <p data-i18n="problem.card3.copy">Replace random review with a priority list based on goal, skill, and score gap.</p>
+          </article>
+          <article class="pain-card tilt">
+            <div class="pain-illu">
+              <svg viewBox="0 0 80 80" fill="none"><circle cx="40" cy="40" r="20" fill="#fbe1d1"/><circle cx="34" cy="36" r="2" fill="#5d2a1a"/><circle cx="46" cy="36" r="2" fill="#5d2a1a"/><path d="M32 48c2-2 4-3 8-3s6 1 8 3" stroke="#5d2a1a" stroke-width="2" stroke-linecap="round" fill="none"/><path d="M22 22l4 4M58 22l-4 4M14 40h6M60 40h6" stroke="#24529b" stroke-width="2" stroke-linecap="round"/></svg>
+            </div>
+            <span class="card-index">04</span>
+            <h3 data-i18n="problem.card4.title">"University preparation feels overwhelming."</h3>
+            <p data-i18n="problem.card4.copy">Give students a calmer, step-by-step path through pressure and uncertainty.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- SOLUTION -->
+      <section class="section section-solution reveal" aria-labelledby="solution-title">
+        <div class="solution-layout">
+          <div>
+            <span class="eyebrow" data-i18n="solution.eyebrow">The UpSqill approach</span>
+            <h2 id="solution-title" data-i18n="solution.title">A Smarter Way to Prepare for University</h2>
+            <p data-i18n="solution.copy">
+              UpSqill connects goals, current ability, skill gaps, and learning plans into one personalized
+              roadmap. Students understand what to improve and how to move closer to their dream faculty.
+            </p>
+            <ul class="benefit-list">
+              <li data-i18n="solution.benefit1">Discover suitable academic goals</li>
+              <li data-i18n="solution.benefit2">Identify score gaps and weak skills</li>
+              <li data-i18n="solution.benefit3">Receive personalized learning recommendations</li>
+              <li data-i18n="solution.benefit4">Track progress over time</li>
+            </ul>
+          </div>
+          <div class="report-card tilt-strong" aria-label="Demo report preview">
+            <div class="report-glow"></div>
+            <div class="report-topline">
+              <div>
+                <span class="panel-label" data-i18n="solution.report.label">Demo report</span>
+                <h3 data-i18n="solution.report.title">Dek70 Skill Diagnosis</h3>
+              </div>
+              <span class="status-dot"><span class="dot-pulse"></span><span data-i18n="solution.report.status">Live preview</span></span>
+            </div>
+            <div class="score-ring" aria-hidden="true">
+              <svg viewBox="0 0 200 200" class="score-ring-svg">
+                <circle cx="100" cy="100" r="84" fill="none" stroke="#f7f7f8" stroke-width="14"/>
+                <circle class="score-ring-progress" cx="100" cy="100" r="84" fill="none" stroke="url(#scoreGrad)" stroke-width="14" stroke-linecap="round" stroke-dasharray="528" stroke-dashoffset="528" transform="rotate(-90 100 100)"/>
+                <defs>
+                  <linearGradient id="scoreGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#20aeea"/>
+                    <stop offset="100%" stop-color="#24529b"/>
+                  </linearGradient>
+                </defs>
+              </svg>
+              <div class="score-ring-text">
+                <span><b data-counter data-target="72">0</b><em>%</em></span>
+                <small data-i18n="solution.report.readiness">Readiness</small>
+                <strong data-i18n="solution.report.ringNote">13 points to goal range</strong>
+              </div>
+            </div>
+            <div class="report-summary">
+              <div>
+                <span class="panel-label" data-i18n="solution.report.nextLabel">Next best focus</span>
+                <strong data-i18n="solution.report.nextValue">English inference and math foundation</strong>
+                <p data-i18n="solution.report.nextCopy">
+                  Strong overall direction. The fastest score lift comes from focused practice on the highest-impact weak skills this week.
+                </p>
+              </div>
+              <div class="report-summary-kpis" aria-label="Demo report highlights">
+                <span><b>+13</b><small data-i18n="solution.report.gap">points to target</small></span>
+                <span><b>4</b><small data-i18n="solution.report.skills">priority skills</small></span>
+              </div>
+            </div>
+            <div class="report-bars">
+              <div><span data-i18n="solution.report.goalFit">Goal fit</span><b data-bar-target="82"></b></div>
+              <div><span data-i18n="solution.report.math">Math foundation</span><b data-bar-target="58"></b></div>
+              <div><span data-i18n="solution.report.english">English inference</span><b data-bar-target="46"></b></div>
+              <div><span data-i18n="solution.report.focus">Weekly focus</span><b data-bar-target="68"></b></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- INSIGHTS DASHBOARD -->
+      <section class="section section-insights reveal" id="insights" aria-labelledby="insights-title">
+        <div class="insights-hero">
+          <div class="section-heading">
+            <span class="eyebrow" data-i18n="insights.eyebrow">Learning insight dashboard</span>
+            <h2 id="insights-title" data-i18n-html="insights.title">See the <em>next best move</em>, not just another score</h2>
+            <p data-i18n="insights.copy">
+              UpSqill turns diagnostic results into practical decisions: which skill has the largest score impact,
+              how much effort is needed, and what should happen this week.
+            </p>
+          </div>
+
+          <div class="learning-orbit" aria-hidden="true">
+            <div class="orbit-dashboard-frame"></div>
+            <div class="orbit-grid-mesh"></div>
+            <div class="orbit-scanline"></div>
+            <div class="orbit-plane orbit-plane-one"></div>
+            <div class="orbit-plane orbit-plane-two"></div>
+            <div class="orbit-plane orbit-plane-three"></div>
+            <div class="orbit-core">
+              <span>AI</span>
+              <small data-i18n="insights.orbit.core">Roadmap</small>
+            </div>
+            <div class="orbit-node orbit-node-goal">
+              <b>01</b>
+              <span data-i18n="insights.orbit.goal">Goal</span>
+            </div>
+            <div class="orbit-node orbit-node-skill">
+              <b>02</b>
+              <span data-i18n="insights.orbit.skill">Skill gap</span>
+            </div>
+            <div class="orbit-node orbit-node-plan">
+              <b>03</b>
+              <span data-i18n="insights.orbit.plan">Study plan</span>
+            </div>
+            <div class="orbit-node orbit-node-growth">
+              <b>04</b>
+              <span data-i18n="insights.orbit.growth">Growth</span>
+            </div>
+            <div class="orbit-hud orbit-hud-score">
+              <span class="panel-label" data-i18n="insights.orbit.readiness">Readiness</span>
+              <strong>72%</strong>
+              <small data-i18n="insights.orbit.momentum">+18% learning momentum</small>
+              <i style="--w: 72%"></i>
+            </div>
+            <div class="orbit-hud orbit-hud-focus">
+              <span class="panel-label" data-i18n="insights.orbit.priority">Priority skill</span>
+              <strong data-i18n="insights.orbit.priorityValue">Reading inference</strong>
+              <small data-i18n="insights.orbit.priorityNote">High score impact</small>
+              <i style="--w: 84%"></i>
+            </div>
+            <div class="orbit-hud orbit-hud-plan">
+              <span class="panel-label" data-i18n="insights.orbit.week">This week</span>
+              <div class="orbit-week-dots">
+                <b></b><b></b><b></b><b></b><b class="muted"></b>
+              </div>
+              <strong data-i18n="insights.orbit.weekValue">4 focused practice days</strong>
+            </div>
+            <div class="orbit-skill-stack">
+              <span data-i18n="insights.orbit.stackTitle">Skill signals</span>
+              <i style="--h: 78%"></i>
+              <i style="--h: 56%"></i>
+              <i style="--h: 68%"></i>
+              <i style="--h: 44%"></i>
+            </div>
+            <div class="orbit-recommendation">
+              <span data-i18n="insights.orbit.recommendLabel">AI recommends</span>
+              <strong data-i18n="insights.orbit.recommendValue">Start where weakness meets exam impact</strong>
+            </div>
+            <div class="data-beam data-beam-one"></div>
+            <div class="data-beam data-beam-two"></div>
+            <div class="data-beam data-beam-three"></div>
+          </div>
+        </div>
+
+        <div class="insight-grid">
+          <article class="insight-card chart-card score-gap-card">
+            <div class="chart-card-head">
+              <div>
+                <span class="panel-label" data-i18n="insights.score.label">Score gap model</span>
+                <h3 data-i18n="insights.score.title">126 points to target</h3>
+              </div>
+              <strong class="chart-kpi">594 → 720</strong>
+            </div>
+            <div class="score-gap-chart" aria-label="Current score 594, target score 720">
+              <div class="score-scale">
+                <span>0</span>
+                <span>360</span>
+                <span>720</span>
+              </div>
+              <div class="score-track">
+                <i class="score-current" style="--w: 82.5%"></i>
+                <i class="score-gap" style="--w: 17.5%"></i>
+                <span class="score-marker score-marker-current" style="--x: 82.5%"><b>594</b><small data-i18n="insights.score.now">now</small></span>
+                <span class="score-marker score-marker-target" style="--x: 100%"><b>720</b><small data-i18n="insights.score.target">target</small></span>
+              </div>
+              <div class="score-legend">
+                <span><i class="legend-current"></i><b data-i18n="insights.score.current">Current readiness</b></span>
+                <span><i class="legend-gap"></i><b data-i18n="insights.score.remaining">Remaining gap</b></span>
+              </div>
+              <div class="score-detail-grid">
+                <span><b>82.5%</b><small data-i18n="insights.score.progress">target coverage</small></span>
+                <span><b>45</b><small data-i18n="insights.score.fastRoute">fast-route points</small></span>
+                <span><b>2</b><small data-i18n="insights.score.keySkills">key blockers</small></span>
+              </div>
+            </div>
+            <p data-i18n="insights.score.insight">
+              The gap is not spread evenly. English inference and chemistry concepts create the fastest route to the next 45 points.
+            </p>
+          </article>
+
+          <article class="insight-card chart-card payoff-card">
+            <div class="chart-card-head">
+              <div>
+                <span class="panel-label" data-i18n="insights.payoff.label">Skill payoff map</span>
+                <h3 data-i18n="insights.payoff.title">Focus where weakness meets impact</h3>
+              </div>
+              <strong class="chart-kpi" data-i18n="insights.payoff.kpi">4 skills</strong>
+            </div>
+            <div class="payoff-map" aria-label="Skill payoff map">
+              <span class="axis-y" data-i18n="insights.payoff.y">Weakness</span>
+              <span class="axis-x" data-i18n="insights.payoff.x">Exam impact</span>
+              <span class="payoff-zone payoff-zone-priority" data-i18n="insights.payoff.priorityZone">Priority zone</span>
+              <span class="payoff-zone payoff-zone-maintain" data-i18n="insights.payoff.maintainZone">Maintain</span>
+              <i class="payoff-halo payoff-halo-critical"></i>
+              <i class="payoff-gridline payoff-gridline-v"></i>
+              <i class="payoff-gridline payoff-gridline-h"></i>
+              <button class="payoff-node node-critical" type="button" style="--x: 76%; --y: 68%;" aria-label="Reading inference, high weakness and high impact">
+                <span data-i18n="insights.payoff.reading">Reading inference</span>
+                <small data-i18n="insights.payoff.readingMeta">+24 pt potential</small>
+              </button>
+              <button class="payoff-node node-high" type="button" style="--x: 62%; --y: 54%;" aria-label="Stoichiometry, high value focus">
+                <span data-i18n="insights.payoff.chemistry">Stoichiometry</span>
+                <small data-i18n="insights.payoff.chemistryMeta">concept gap</small>
+              </button>
+              <button class="payoff-node node-medium" type="button" style="--x: 38%; --y: 42%;" aria-label="Algebra accuracy, medium focus">
+                <span data-i18n="insights.payoff.algebra">Algebra accuracy</span>
+                <small data-i18n="insights.payoff.algebraMeta">stabilize</small>
+              </button>
+              <button class="payoff-node node-low" type="button" style="--x: 28%; --y: 24%;" aria-label="Vocabulary review, lower urgency">
+                <span data-i18n="insights.payoff.vocab">Vocabulary review</span>
+                <small data-i18n="insights.payoff.vocabMeta">keep warm</small>
+              </button>
+            </div>
+            <div class="payoff-actions">
+              <span><b data-i18n="insights.payoff.action1">Start here</b><small>Reading inference</small></span>
+              <span><b data-i18n="insights.payoff.action2">Then reinforce</b><small>Stoichiometry</small></span>
+            </div>
+            <p data-i18n="insights.payoff.insight">
+              Instead of reviewing every topic equally, the roadmap starts with the upper-right skills that block the most points.
+            </p>
+          </article>
+
+          <article class="insight-card chart-card momentum-card">
+            <div class="chart-card-head">
+              <div>
+                <span class="panel-label" data-i18n="insights.momentum.label">Learning momentum</span>
+                <h3 data-i18n="insights.momentum.title">Practice consistency predicts score movement</h3>
+              </div>
+              <strong class="chart-kpi">+18%</strong>
+            </div>
+            <svg class="momentum-chart" viewBox="0 0 520 220" role="img" aria-label="Weekly mastery trend rising from 42 percent to 71 percent">
+              <defs>
+                <linearGradient id="momentumArea" x1="0" x2="0" y1="0" y2="1">
+                  <stop offset="0%" stop-color="#20aeea" stop-opacity="0.26"/>
+                  <stop offset="100%" stop-color="#20aeea" stop-opacity="0"/>
+                </linearGradient>
+              </defs>
+              <path class="chart-area" d="M24 158 C 92 148, 112 130, 166 136 S 254 126, 298 98 S 390 82, 496 62 L 496 190 L 24 190 Z" fill="url(#momentumArea)"/>
+              <path class="chart-line" d="M24 158 C 92 148, 112 130, 166 136 S 254 126, 298 98 S 390 82, 496 62"/>
+              <g class="chart-dots">
+                <circle cx="24" cy="158" r="5"/>
+                <circle cx="166" cy="136" r="5"/>
+                <circle cx="298" cy="98" r="5"/>
+                <circle cx="496" cy="62" r="5"/>
+              </g>
+              <g class="chart-labels">
+                <text x="24" y="210">W1</text>
+                <text x="166" y="210">W3</text>
+                <text x="298" y="210">W5</text>
+                <text x="474" y="210">W8</text>
+              </g>
+            </svg>
+            <div class="momentum-insights">
+              <span><b>4/7</b><small data-i18n="insights.momentum.practiceDays">practice days</small></span>
+              <span><b>71%</b><small data-i18n="insights.momentum.mastery">current mastery</small></span>
+              <span><b>+9</b><small data-i18n="insights.momentum.next">next-week lift</small></span>
+            </div>
+            <p data-i18n="insights.momentum.insight">
+              Four focused practice days per week are enough to move mastery when the questions match the right skill.
+            </p>
+          </article>
+
+          <article class="insight-card chart-card radar-card">
+            <div class="chart-card-head">
+              <div>
+                <span class="panel-label" data-i18n="insights.radar.label">Readiness balance</span>
+                <h3 data-i18n="insights.radar.title">Strong in accuracy, weaker in transfer</h3>
+              </div>
+              <strong class="chart-kpi">72%</strong>
+            </div>
+            <div class="radar-wrap">
+              <svg class="radar-chart" viewBox="0 0 280 280" role="img" aria-label="Readiness radar chart">
+                <polygon class="radar-ring" points="140,24 250,104 208,232 72,232 30,104"/>
+                <polygon class="radar-ring radar-ring-inner" points="140,70 206,118 181,194 99,194 74,118"/>
+                <g class="radar-axes">
+                  <line x1="140" y1="140" x2="140" y2="24"/>
+                  <line x1="140" y1="140" x2="250" y2="104"/>
+                  <line x1="140" y1="140" x2="208" y2="232"/>
+                  <line x1="140" y1="140" x2="72" y2="232"/>
+                  <line x1="140" y1="140" x2="30" y2="104"/>
+                </g>
+                <polygon class="radar-target" points="140,38 232,110 198,218 84,218 48,110"/>
+                <polygon class="radar-current" points="140,52 204,122 166,194 92,204 62,120"/>
+              </svg>
+              <ul class="radar-labels">
+                <li data-i18n="insights.radar.accuracy">Accuracy</li>
+                <li data-i18n="insights.radar.speed">Speed</li>
+                <li data-i18n="insights.radar.transfer">Transfer</li>
+                <li data-i18n="insights.radar.memory">Memory</li>
+                <li data-i18n="insights.radar.confidence">Confidence</li>
+              </ul>
+              <div class="radar-score-list">
+                <span><b>82</b><small data-i18n="insights.radar.accuracy">Accuracy</small></span>
+                <span><b>71</b><small data-i18n="insights.radar.speed">Speed</small></span>
+                <span class="is-alert"><b>48</b><small data-i18n="insights.radar.transfer">Transfer</small></span>
+              </div>
+            </div>
+            <div class="radar-alert">
+              <span data-i18n="insights.radar.alertLabel">Main gap</span>
+              <strong data-i18n="insights.radar.alertValue">Transfer skill needs targeted practice before harder sets.</strong>
+            </div>
+            <p data-i18n="insights.radar.insight">
+              The next plan should not add harder questions yet. It should train transfer: applying known concepts in unfamiliar exam formats.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <!-- HOW IT WORKS -->
+      <section class="section section-steps reveal" id="how-it-works" aria-labelledby="how-title">
+        <div class="section-heading">
+          <span class="eyebrow" data-i18n="how.eyebrow">How it works</span>
+          <h2 id="how-title" data-i18n-html="how.title">From Goal to Roadmap in <em>Five Steps</em></h2>
+          <p data-i18n="how.copy">
+            UpSqill turns admissions preparation into a guided loop: diagnose, prioritize, practice, and track.
+          </p>
+        </div>
+        <div class="steps">
+          <div class="steps-line" aria-hidden="true"></div>
+          <article class="step-card tilt">
+            <div class="step-icon">
+              <svg viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="14" stroke="#24529b" stroke-width="2" fill="rgba(36,82,155,0.06)"/><path d="M20 12v8l5 3" stroke="#24529b" stroke-width="2" stroke-linecap="round"/></svg>
+            </div>
+            <span class="step-num">01</span>
+            <h3 data-i18n="how.step1.title">Discover Your Goal</h3>
+            <p data-i18n="how.step1.copy">Share dream faculty, target university, current score, strengths, and learning preferences.</p>
+          </article>
+          <article class="step-card tilt">
+            <div class="step-icon">
+              <svg viewBox="0 0 40 40" fill="none"><rect x="8" y="10" width="24" height="20" rx="3" stroke="#20aeea" stroke-width="2" fill="rgba(32,174,234,0.06)"/><path d="M14 18l3 3 6-6" stroke="#20aeea" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 26h12" stroke="#20aeea" stroke-width="2" stroke-linecap="round"/></svg>
+            </div>
+            <span class="step-num">02</span>
+            <h3 data-i18n="how.step2.title">Take an AI Skill Diagnosis</h3>
+            <p data-i18n="how.step2.copy">Analyze performance to identify skill gaps, weak concepts, readiness, and improvement priorities.</p>
+          </article>
+          <article class="step-card tilt">
+            <div class="step-icon">
+              <svg viewBox="0 0 40 40" fill="none"><path d="M8 28L16 16l6 8 10-14" stroke="#5d2a1a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/><circle cx="32" cy="10" r="3" fill="#5d2a1a"/><circle cx="22" cy="24" r="3" fill="#fbe1d1" stroke="#5d2a1a" stroke-width="1.5"/><circle cx="16" cy="16" r="3" fill="#fbe1d1" stroke="#5d2a1a" stroke-width="1.5"/></svg>
+            </div>
+            <span class="step-num">03</span>
+            <h3 data-i18n="how.step3.title">Get a Personalized Roadmap</h3>
+            <p data-i18n="how.step3.copy">Receive a learning sequence with priority skills, weekly direction, and milestones.</p>
+          </article>
+          <article class="step-card tilt">
+            <div class="step-icon">
+              <svg viewBox="0 0 40 40" fill="none"><path d="M20 6a14 14 0 100 28 14 14 0 000-28z" stroke="#24529b" stroke-width="2" fill="rgba(36,82,155,0.06)"/><path d="M20 14v6l4 2" stroke="#20aeea" stroke-width="2" stroke-linecap="round"/><circle cx="20" cy="20" r="2" fill="#20aeea"/></svg>
+            </div>
+            <span class="step-num">04</span>
+            <h3 data-i18n="how.step4.title">Practice with AI Feedback</h3>
+            <p data-i18n="how.step4.copy">Practice targeted questions and learn from explanations, mistake analysis, and next actions.</p>
+          </article>
+          <article class="step-card tilt">
+            <div class="step-icon">
+              <svg viewBox="0 0 40 40" fill="none"><rect x="6" y="22" width="6" height="12" rx="1.5" fill="#fbe1d1"/><rect x="14" y="16" width="6" height="18" rx="1.5" fill="#5d2a1a"/><rect x="22" y="10" width="6" height="24" rx="1.5" fill="#20aeea"/><rect x="30" y="6" width="6" height="28" rx="1.5" fill="#24529b"/></svg>
+            </div>
+            <span class="step-num">05</span>
+            <h3 data-i18n="how.step5.title">Track Progress Over Time</h3>
+            <p data-i18n="how.step5.copy">Monitor mastery, readiness score, progress trends, and recommended next steps.</p>
+          </article>
+        </div>
+        <div class="section-cta">
+          <a class="button button-primary" href="#diagnostic">
+            <span data-i18n="cta.exploreReport">Explore Demo Report</span>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </section>
+
+      <!-- FEATURES -->
+      <section class="section section-features reveal" id="features" aria-labelledby="features-title">
+        <div class="section-heading">
+          <span class="eyebrow" data-i18n="features.eyebrow">Key features</span>
+          <h2 id="features-title" data-i18n-html="features.title">Built to Help Students Improve <em>Smarter</em></h2>
+          <p data-i18n="features.copy">
+            Each feature translates performance data into a practical next step students and parents can understand.
+          </p>
+        </div>
+        <div class="feature-grid">
+          <article class="feature-card tilt">
+            <div class="feature-icon icon-blue">
+              <svg viewBox="0 0 32 32" fill="none"><path d="M16 4l3.5 7.5L28 13l-6 5.5L23.5 27 16 23l-7.5 4 1.5-8.5L4 13l8.5-1.5z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+            </div>
+            <h3 data-i18n="features.card1.title">AI Diagnostic Engine</h3>
+            <p data-i18n="features.card1.copy">Know exactly where you are weak before spending more time studying.</p>
+          </article>
+          <article class="feature-card tilt">
+            <div class="feature-icon icon-navy">
+              <svg viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="12" stroke="currentColor" stroke-width="2"/><circle cx="16" cy="16" r="6" stroke="currentColor" stroke-width="2"/><circle cx="16" cy="16" r="1.5" fill="currentColor"/></svg>
+            </div>
+            <h3 data-i18n="features.card2.title">Goal-to-Score Mapping</h3>
+            <p data-i18n="features.card2.copy">Turn your dream faculty into a clear score and skill roadmap.</p>
+          </article>
+          <article class="feature-card tilt">
+            <div class="feature-icon icon-terra">
+              <svg viewBox="0 0 32 32" fill="none"><path d="M6 8h20M6 16h14M6 24h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="26" cy="16" r="2" fill="currentColor"/><circle cx="22" cy="24" r="2" fill="currentColor"/></svg>
+            </div>
+            <h3 data-i18n="features.card3.title">Personalized Study Plans</h3>
+            <p data-i18n="features.card3.copy">Study what matters most for your goal instead of following generic advice.</p>
+          </article>
+          <article class="feature-card tilt">
+            <div class="feature-icon icon-blue">
+              <svg viewBox="0 0 32 32" fill="none"><path d="M4 18l5-5 4 4 8-8 5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M22 4h6v6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h3 data-i18n="features.card4.title">Adaptive Practice</h3>
+            <p data-i18n="features.card4.copy">The more you practice, the smarter your learning path becomes.</p>
+          </article>
+          <article class="feature-card tilt">
+            <div class="feature-icon icon-navy">
+              <svg viewBox="0 0 32 32" fill="none"><path d="M6 8a3 3 0 013-3h14a3 3 0 013 3v10a3 3 0 01-3 3h-7l-5 5v-5H9a3 3 0 01-3-3z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="12" cy="13" r="1.4" fill="currentColor"/><circle cx="16" cy="13" r="1.4" fill="currentColor"/><circle cx="20" cy="13" r="1.4" fill="currentColor"/></svg>
+            </div>
+            <h3 data-i18n="features.card5.title">AI Feedback System</h3>
+            <p data-i18n="features.card5.copy">Don't just know the answer. Understand why and what to improve next.</p>
+          </article>
+          <article class="feature-card tilt">
+            <div class="feature-icon icon-terra">
+              <svg viewBox="0 0 32 32" fill="none"><rect x="4" y="6" width="24" height="20" rx="2" stroke="currentColor" stroke-width="2"/><path d="M9 20l4-6 4 4 6-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h3 data-i18n="features.card6.title">Progress Analytics Dashboard</h3>
+            <p data-i18n="features.card6.copy">See improvement clearly, one skill at a time.</p>
+          </article>
+          <article class="feature-card feature-card-wide tilt">
+            <div class="feature-icon icon-gradient">
+              <svg viewBox="0 0 32 32" fill="none"><path d="M16 4a6 6 0 016 6v3M10 13v-3a6 6 0 016-6" stroke="currentColor" stroke-width="2"/><rect x="6" y="13" width="20" height="14" rx="3" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="20" r="1.4" fill="currentColor"/><circle cx="16" cy="20" r="1.4" fill="currentColor"/><circle cx="20" cy="20" r="1.4" fill="currentColor"/></svg>
+            </div>
+            <div class="feature-wide-text">
+              <h3 data-i18n="features.card7.title">Parent Insight Report</h3>
+              <p data-i18n="features.card7.copy">Help your child with clarity, not guesswork, through simple weekly progress insights.</p>
+            </div>
+            <a href="#parents" class="link-arrow">
+              <span data-i18n="cta.learnMore">Learn more</span>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </article>
+        </div>
+      </section>
+
+      <!-- COMPARISON -->
+      <section class="section section-comparison reveal" aria-labelledby="different-title">
+        <div class="section-heading">
+          <span class="eyebrow" data-i18n="comparison.eyebrow">Why UpSqill is different</span>
+          <h2 id="different-title" data-i18n-html="comparison.title">More Than Practice Questions. UpSqill Understands <em>How You Learn</em>.</h2>
+        </div>
+        <div class="comparison-table" role="table" aria-label="Comparison between traditional tutoring, generic learning apps, and UpSqill">
+          <div class="comparison-row comparison-head" role="row">
+            <div role="columnheader" data-i18n="comparison.head.tutoring">Traditional Tutoring</div>
+            <div role="columnheader" data-i18n="comparison.head.apps">Generic Learning Apps</div>
+            <div role="columnheader" class="col-upsqill">
+              <span class="col-badge">UpSqill</span>
+            </div>
+          </div>
+          <div class="comparison-row" role="row">
+            <div role="cell"><span class="comp-icon comp-x">✕</span><span data-i18n="comparison.row1.tutoring">One-size-fits-all learning</span></div>
+            <div role="cell"><span class="comp-icon comp-x">✕</span><span data-i18n="comparison.row1.apps">Static practice content</span></div>
+            <div role="cell" class="col-upsqill"><span class="comp-icon comp-check">✓</span><span data-i18n="comparison.row1.upsqill">Personalized AI learning roadmap</span></div>
+          </div>
+          <div class="comparison-row" role="row">
+            <div role="cell"><span class="comp-icon comp-x">✕</span><span data-i18n="comparison.row2.tutoring">Progress can be unclear</span></div>
+            <div role="cell"><span class="comp-icon comp-x">✕</span><span data-i18n="comparison.row2.apps">Basic scoring only</span></div>
+            <div role="cell" class="col-upsqill"><span class="comp-icon comp-check">✓</span><span data-i18n="comparison.row2.upsqill">Skill-level diagnosis and analytics</span></div>
+          </div>
+          <div class="comparison-row" role="row">
+            <div role="cell"><span class="comp-icon comp-x">✕</span><span data-i18n="comparison.row3.tutoring">Depends on tutor availability</span></div>
+            <div role="cell"><span class="comp-icon comp-x">✕</span><span data-i18n="comparison.row3.apps">Same content for everyone</span></div>
+            <div role="cell" class="col-upsqill"><span class="comp-icon comp-check">✓</span><span data-i18n="comparison.row3.upsqill">Adaptive recommendations</span></div>
+          </div>
+          <div class="comparison-row" role="row">
+            <div role="cell"><span class="comp-icon comp-x">✕</span><span data-i18n="comparison.row4.tutoring">May not connect to goals</span></div>
+            <div role="cell"><span class="comp-icon comp-x">✕</span><span data-i18n="comparison.row4.apps">No goal-to-score mapping</span></div>
+            <div role="cell" class="col-upsqill"><span class="comp-icon comp-check">✓</span><span data-i18n="comparison.row4.upsqill">Connects goals, scores, and skills</span></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- JOURNEY -->
+      <section class="section section-journey reveal" aria-labelledby="journey-title">
+        <div class="journey-layout">
+          <div class="journey-intro">
+            <span class="eyebrow" data-i18n="journey.eyebrow">Student journey</span>
+            <h2 id="journey-title" data-i18n-html="journey.title">From Uncertainty to <em>Confidence</em></h2>
+            <p data-i18n="journey.copy">
+              Students move from a dream faculty to exam readiness through diagnosis, roadmap planning,
+              adaptive practice, and progress tracking.
+            </p>
+          </div>
+          <div class="journey-track" aria-label="Student journey flow">
+            <svg class="journey-path" viewBox="0 0 1000 100" preserveAspectRatio="none" aria-hidden="true">
+              <path d="M40 50 Q 220 10, 300 50 T 560 50 T 820 50 T 980 50" stroke="#24529b" stroke-width="2" stroke-dasharray="6 6" fill="none" opacity="0.4"/>
+            </svg>
+            <div class="journey-step">
+              <div class="journey-icon">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M12 2l3 7h7l-5.5 4 2 7L12 16l-6.5 4 2-7L2 9h7z" fill="#5d2a1a"/></svg>
+              </div>
+              <span data-i18n="journey.step1.title">Dream Big</span>
+              <small data-i18n="journey.step1.copy">Choose direction</small>
+            </div>
+            <div class="journey-step">
+              <div class="journey-icon">
+                <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="9" r="4" stroke="#24529b" stroke-width="2"/><path d="M4 21c0-4 4-7 8-7s8 3 8 7" stroke="#24529b" stroke-width="2" stroke-linecap="round"/></svg>
+              </div>
+              <span data-i18n="journey.step2.title">Understand Yourself</span>
+              <small data-i18n="journey.step2.copy">Diagnose strengths</small>
+            </div>
+            <div class="journey-step">
+              <div class="journey-icon">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M3 12l3-3 3 3 6-6 3 3 3-3" stroke="#20aeea" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="21" cy="6" r="2" fill="#20aeea"/></svg>
+              </div>
+              <span data-i18n="journey.step3.title">Learn Smarter</span>
+              <small data-i18n="journey.step3.copy">Follow priorities</small>
+            </div>
+            <div class="journey-step">
+              <div class="journey-icon">
+                <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="14" width="4" height="7" rx="1" fill="#fbe1d1"/><rect x="10" y="9" width="4" height="12" rx="1" fill="#5d2a1a"/><rect x="17" y="4" width="4" height="17" rx="1" fill="#24529b"/></svg>
+              </div>
+              <span data-i18n="journey.step4.title">Track Growth</span>
+              <small data-i18n="journey.step4.copy">See mastery</small>
+            </div>
+            <div class="journey-step">
+              <div class="journey-icon">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M12 22V8M5 14l7-6 7 6" stroke="#5d2a1a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="4" r="2.5" fill="#5d2a1a"/></svg>
+              </div>
+              <span data-i18n="journey.step5.title">Reach Your Goal</span>
+              <small data-i18n="journey.step5.copy">With confidence</small>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PARENT -->
+      <section class="section section-parent reveal" id="parents" aria-labelledby="parent-title">
+        <div class="parent-layout">
+          <div>
+            <span class="eyebrow" data-i18n="parents.eyebrow">For parents</span>
+            <h2 id="parent-title" data-i18n-html="parents.title">Help Your Child Learn with Greater <em>Direction</em> and <em>Confidence</em></h2>
+            <p data-i18n="parents.copy">
+              UpSqill gives parents clearer visibility into strengths, weaknesses, progress, and recommended
+              next steps, not only test scores.
+            </p>
+            <div class="parent-benefits">
+              <div class="benefit-card">
+                <div class="benefit-icon">
+                  <svg viewBox="0 0 24 24" fill="none"><path d="M3 17l5-5 4 4 9-9" stroke="#5d2a1a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M16 7h5v5" stroke="#5d2a1a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+                <h3 data-i18n="parents.benefit1.title">Clear Progress Tracking</h3>
+                <p data-i18n="parents.benefit1.copy">See whether your child is truly improving.</p>
+              </div>
+              <div class="benefit-card">
+                <div class="benefit-icon">
+                  <svg viewBox="0 0 24 24" fill="none"><path d="M12 2L4 6v6c0 5 3.5 9 8 10 4.5-1 8-5 8-10V6z" stroke="#5d2a1a" stroke-width="2" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke="#5d2a1a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+                <h3 data-i18n="parents.benefit2.title">Smarter Learning Support</h3>
+                <p data-i18n="parents.benefit2.copy">Support your child with better direction.</p>
+              </div>
+              <div class="benefit-card">
+                <div class="benefit-icon">
+                  <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#5d2a1a" stroke-width="2"/><path d="M12 7v5l3 2" stroke="#5d2a1a" stroke-width="2" stroke-linecap="round"/></svg>
+                </div>
+                <h3 data-i18n="parents.benefit3.title">More Efficient Preparation</h3>
+                <p data-i18n="parents.benefit3.copy">Focus on high-impact improvement areas.</p>
+              </div>
+              <div class="benefit-card">
+                <div class="benefit-icon">
+                  <svg viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.5-7-11a4 4 0 017-2.6A4 4 0 0119 10c0 6.5-7 11-7 11z" stroke="#5d2a1a" stroke-width="2" stroke-linejoin="round"/></svg>
+                </div>
+                <h3 data-i18n="parents.benefit4.title">Lower Stress</h3>
+                <p data-i18n="parents.benefit4.copy">Reduce uncertainty with structured next steps.</p>
+              </div>
+            </div>
+          </div>
+          <aside class="parent-report tilt-strong" aria-label="Parent insight report preview">
+            <div class="parent-report-glow"></div>
+            <div class="parent-report-head">
+              <span class="panel-label" data-i18n="parents.report.label">Parent insight</span>
+              <span class="status-dot"><span class="dot-pulse"></span><span data-i18n="parents.report.status">This week</span></span>
+            </div>
+            <h3 data-i18n="parents.report.title">This week's focus</h3>
+            <div class="insight-row">
+              <span data-i18n="parents.report.row1.label">High-impact skill</span>
+              <strong data-i18n="parents.report.row1.value">Reading inference</strong>
+            </div>
+            <div class="insight-row">
+              <span data-i18n="parents.report.row2.label">Practice consistency</span>
+              <strong><span data-i18n="parents.report.row2.value">4 days</span> <small class="trend-up">↑ 1</small></strong>
+            </div>
+            <div class="insight-row">
+              <span data-i18n="parents.report.row3.label">Next action</span>
+              <strong data-i18n="parents.report.row3.value">Review weak concepts</strong>
+            </div>
+            <div class="parent-chart" aria-hidden="true">
+              <span class="panel-label" data-i18n="parents.report.chart">Last 7 days</span>
+              <div class="bars">
+                <i style="--h: 30%"></i>
+                <i style="--h: 55%"></i>
+                <i style="--h: 40%"></i>
+                <i style="--h: 70%"></i>
+                <i style="--h: 60%"></i>
+                <i style="--h: 85%"></i>
+                <i style="--h: 75%"></i>
+              </div>
+            </div>
+            <a class="button button-secondary" href="#diagnostic">
+              <span data-i18n="cta.parentInsights">See Parent Insights</span>
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </aside>
+        </div>
+      </section>
+
+      <!-- TRUST -->
+      <section class="section section-trust reveal" aria-labelledby="trust-title">
+        <div class="section-heading">
+          <span class="eyebrow" data-i18n="trust.eyebrow">Trust and vision</span>
+          <h2 id="trust-title" data-i18n-html="trust.title">Built with Educational Research and <em class="text-gradient">AI Innovation</em></h2>
+          <p data-i18n="trust.copy">
+            UpSqill is focused on measurable learning outcomes, adaptive learning, and a clearer preparation
+            experience for both students and parents.
+          </p>
+        </div>
+        <div class="trust-grid">
+          <div class="trust-card">
+            <div class="trust-icon">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M3 8l9-5 9 5v8l-9 5-9-5z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M12 12v9" stroke="currentColor" stroke-width="2"/></svg>
+            </div>
+            <span data-i18n="trust.card1">Designed specifically for Thai high school students</span>
+          </div>
+          <div class="trust-card">
+            <div class="trust-icon">
+              <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M12 7l1.8 3.6 4 .6-2.9 2.8.7 4L12 16l-3.6 1.9.7-4-2.9-2.8 4-.6z" fill="currentColor"/></svg>
+            </div>
+            <span data-i18n="trust.card2">Built for Dek70 university preparation</span>
+          </div>
+          <div class="trust-card">
+            <div class="trust-icon">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M4 19.5V5a2 2 0 012-2h12a2 2 0 012 2v14.5l-4-2-4 2-4-2-4 2z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+            </div>
+            <span data-i18n="trust.card3">Research-driven learning methodology</span>
+          </div>
+          <div class="trust-card">
+            <div class="trust-icon">
+              <svg viewBox="0 0 24 24" fill="none"><circle cx="6" cy="6" r="3" stroke="currentColor" stroke-width="2"/><circle cx="18" cy="6" r="3" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="18" r="3" stroke="currentColor" stroke-width="2"/><path d="M8 8l3 8M16 8l-3 8" stroke="currentColor" stroke-width="2"/></svg>
+            </div>
+            <span data-i18n="trust.card4">Goal-to-score-to-skill mapping</span>
+          </div>
+          <div class="trust-card">
+            <div class="trust-icon">
+              <svg viewBox="0 0 24 24" fill="none"><rect x="5" y="3" width="14" height="18" rx="2" stroke="currentColor" stroke-width="2"/><path d="M9 8h6M9 12h6M9 16h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </div>
+            <span data-i18n="trust.card5">AI-powered personalized tutoring vision</span>
+          </div>
+          <div class="trust-card">
+            <div class="trust-icon">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M16 11a4 4 0 10-8 0M3 21c0-4 4-7 9-7s9 3 9 7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </div>
+            <span data-i18n="trust.card6">Parent insight reports and analytics</span>
+          </div>
+        </div>
+        <div class="partners-band" aria-labelledby="partners-title">
+          <div class="partner-copy">
+            <span class="eyebrow" data-i18n="partners.eyebrow">Innovation partners</span>
+            <h3 id="partners-title" data-i18n="partners.title">Backed by Trusted Innovation Partners</h3>
+            <p data-i18n="partners.copy">
+              UpSqill is supported by innovation and entrepreneurial ecosystem partners that help accelerate
+              research, product development, and educational innovation initiatives. Our collaboration network
+              contributes through mentorship, incubation support, workspace facilitation, ecosystem access, and
+              strategic guidance for AI-powered education innovation.
+            </p>
+          </div>
+          <div class="partner-logo-grid" aria-label="UpSqill innovation partners">
+            <figure class="partner-card partner-card-tuipi">
+              <img src="assets/logos/partner-tuipi.png" alt="TUIPI Center of Intellectual Property and Business Incubator, Thammasat University" loading="lazy" decoding="async">
+              <figcaption data-i18n="partners.logo.tuipi">TUIPI, Thammasat University</figcaption>
+            </figure>
+            <figure class="partner-card partner-card-tedfund">
+              <img src="assets/logos/partner-tedfund.png" alt="TED Fund Technology and Innovation-Based Enterprise Development Fund" loading="lazy" decoding="async">
+              <figcaption data-i18n="partners.logo.tedfund">TED Fund</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- FUTURE VISION -->
+      <section class="section section-vision reveal" aria-labelledby="vision-title">
+        <div class="vision-layout">
+          <div>
+            <span class="eyebrow" data-i18n="vision.eyebrow">Future vision</span>
+            <h2 id="vision-title" data-i18n="vision.title">Every student deserves a roadmap built for how they learn.</h2>
+            <p data-i18n="vision.copy">
+              UpSqill is building a personalized education ecosystem: skill diagnosis, adaptive learning,
+              AI coaching, parent insights, and analytics that help students improve with direction.
+            </p>
+          </div>
+          <div class="vision-stack" aria-hidden="true">
+            <div class="vision-card vision-card-one">
+              <span>01</span>
+              <strong data-i18n="vision.card1.title">AI tutoring</strong>
+              <small data-i18n="vision.card1.copy">Personalized guidance</small>
+            </div>
+            <div class="vision-card vision-card-two">
+              <span>02</span>
+              <strong data-i18n="vision.card2.title">Multi-subject diagnosis</strong>
+              <small data-i18n="vision.card2.copy">Across Dek70 subjects</small>
+            </div>
+            <div class="vision-card vision-card-three">
+              <span>03</span>
+              <strong data-i18n="vision.card3.title">Parent analytics</strong>
+              <small data-i18n="vision.card3.copy">Clear progress support</small>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section class="section section-faq reveal" id="faq" aria-labelledby="faq-title">
+        <div class="section-heading">
+          <span class="eyebrow" data-i18n="faq.eyebrow">FAQ</span>
+          <h2 id="faq-title" data-i18n="faq.title">Questions Students and Parents Ask First</h2>
+        </div>
+        <div class="faq-list">
+          <details>
+            <summary data-i18n="faq.q1">Is UpSqill free to use?</summary>
+            <p data-i18n="faq.a1">Some features will be available for free, while advanced personalized features may require subscription access.</p>
+          </details>
+          <details>
+            <summary data-i18n="faq.q2">How does the AI diagnosis work?</summary>
+            <p data-i18n="faq.a2">The system analyzes answers, performance patterns, and skill mastery to identify strengths, weaknesses, and recommended next steps.</p>
+          </details>
+          <details>
+            <summary data-i18n="faq.q3">Can UpSqill help me choose a faculty?</summary>
+            <p data-i18n="faq.a3">Yes. UpSqill connects interests, goals, current scores, and academic strengths with possible faculty options.</p>
+          </details>
+          <details>
+            <summary data-i18n="faq.q4">Can UpSqill help me improve my exam score?</summary>
+            <p data-i18n="faq.a4">Yes. UpSqill identifies weak skills and recommends targeted practice so students can improve more efficiently.</p>
+          </details>
+          <details>
+            <summary data-i18n="faq.q5">Can parents track student progress?</summary>
+            <p data-i18n="faq.a5">Yes. Parents can access progress insights and learning reports when parent features are available.</p>
+          </details>
+          <details>
+            <summary data-i18n="faq.q6">Is UpSqill a replacement for tutoring?</summary>
+            <p data-i18n="faq.a6">UpSqill can complement tutoring, self-study, or school learning by providing personalized diagnosis, practice, and progress insights.</p>
+          </details>
+        </div>
+      </section>
+
+      <!-- FINAL CTA -->
+      <section class="section final-cta reveal" id="diagnostic" aria-labelledby="diagnostic-title">
+        <div class="final-cta-bg" aria-hidden="true">
+          <div class="cta-blob cta-blob-1"></div>
+          <div class="cta-blob cta-blob-2"></div>
+        </div>
+        <div class="final-cta-content">
+          <span class="eyebrow" data-i18n="final.eyebrow">Start today</span>
+          <h2 id="diagnostic-title" data-i18n-html="final.title">Start Your Personalized Learning Journey <em>Today</em></h2>
+          <p data-i18n="final.copy">
+            Discover your strengths, identify your weak points, and build a smarter path toward your dream university.
+          </p>
+          <ul class="cta-perks">
+            <li>
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8" fill="rgba(32,174,234,0.16)"/><path d="M5 9l3 3 5-6" stroke="#20aeea" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span data-i18n="final.perk1">Free diagnostic — no card required</span>
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8" fill="rgba(32,174,234,0.16)"/><path d="M5 9l3 3 5-6" stroke="#20aeea" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span data-i18n="final.perk2">Roadmap delivered in minutes</span>
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="8" fill="rgba(32,174,234,0.16)"/><path d="M5 9l3 3 5-6" stroke="#20aeea" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span data-i18n="final.perk3">Built for Thai admission system</span>
+            </li>
+          </ul>
+        </div>
+        <form class="waitlist-form" data-waitlist-form>
+          <div class="form-head">
+            <h3 data-i18n="form.title">Join the waitlist</h3>
+            <span data-i18n="form.badge">Early access opens soon</span>
+          </div>
+          <label>
+            <span data-i18n="form.name">Student or parent name</span>
+            <input name="name" type="text" autocomplete="name" placeholder="Your name" data-i18n-placeholder="form.namePlaceholder" required>
+          </label>
+          <label>
+            <span data-i18n="form.email">Email</span>
+            <input name="email" type="email" autocomplete="email" placeholder="you@example.com" data-i18n-placeholder="form.emailPlaceholder" required>
+          </label>
+          <label>
+            <span data-i18n="form.goal">Main goal</span>
+            <select name="goal" required>
+              <option value="" data-i18n="form.option.choose">Choose one</option>
+              <option data-i18n="form.option.diagnostic">Start free diagnostic</option>
+              <option data-i18n="form.option.waitlist">Join the waitlist</option>
+              <option data-i18n="form.option.report">Explore demo report</option>
+              <option data-i18n="form.option.faculty">Find best-fit faculty</option>
+            </select>
+          </label>
+          <button class="button button-primary" type="submit">
+            <span data-i18n="cta.joinWaitlist">Join the Waitlist</span>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <p class="form-note" data-form-note data-i18n="form.note">We will use this information to contact you about early access.</p>
+        </form>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-main">
+        <img src="assets/logos/upskill-logo-white-cropped.png" alt="UpSqill">
+        <p data-i18n="footer.copy">
+          UpSqill is an AI-powered personalized learning platform built to help students prepare for
+          university admission with clarity, confidence, and direction.
+        </p>
+        <address class="footer-address">
+          <span data-i18n="footer.addressLabel">Headquarters</span>
+          <p data-i18n-html="footer.address">
+            TU - Bualuang Mindscape<br>
+            Office of Advanced Science and Technology<br>
+            Floor 4, 99 Moo 18<br>
+            Paholyothin Road<br>
+            Khlong Nueng, Khlong Luang District<br>
+            Pathum Thani 12120<br>
+            Thailand
+          </p>
+        </address>
+      </div>
+      <nav aria-label="Footer navigation">
+        <a href="#top" data-i18n="footer.about">About UpSqill</a>
+        <a href="mailto:support@upsqill.com" data-i18n="footer.contact">Contact</a>
+        <a href="#faq" data-i18n="footer.faq">FAQ</a>
+        <a href="#" data-i18n="footer.privacy">Privacy Policy</a>
+        <a href="#" data-i18n="footer.terms">Terms of Service</a>
+      </nav>
+      <div class="footer-bottom">
+        <small data-i18n-html="footer.bottom">&copy; UpSqill 2026 — Built for Dek70 university success.</small>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
