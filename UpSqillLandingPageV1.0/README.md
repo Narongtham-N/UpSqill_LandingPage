@@ -33,6 +33,26 @@ Then open:
 http://127.0.0.1:4173/index.html
 ```
 
+## Git Version Control Workflow
+
+This project uses Git to keep a clear history of landing page changes.
+
+Basic workflow:
+
+```bash
+git status
+git diff
+git add <files>
+git commit -m "Describe the change"
+```
+
+Recommended habit:
+
+- Check `git status` before starting work.
+- Use a feature branch for each focused update.
+- Review `git diff` before staging files.
+- Commit small, meaningful snapshots.
+
 ## Landing Page Sections
 
 - Header - UpSqill brand, anchor navigation, bilingual toggle, and primary diagnostic CTA
