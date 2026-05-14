@@ -13,17 +13,18 @@ The current page is a front-end prototype only. The waitlist form stores submiss
 - `index.html` - page content, semantic section structure, partner logos, footer address, and waitlist form markup
 - `styles.css` - visual system, responsive layout, animations, comparison table styling, partner section styling, and footer styling
 - `script.js` - mobile navigation, language switching, persisted language preference, waitlist prototype capture, counters, scroll reveal, parallax, and hero canvas animation
-- `assets/logos/` - UpSqill logo assets and partner logo assets
+- `assets/logos/` - UpSqill logo assets and partner logo assets deployed to `/assets/logos/`
 - `preview-desktop.png` and `preview-mobile.png` - earlier rendered QA screenshots
-- `design-system/` - supporting design tokens and theme references
+- `../design-system/` - supporting design tokens and theme references
 
 ## Run
 
-Open `index.html` directly in a browser, or serve the folder with any static web server.
+Serve the `frontend/` folder with any static web server.
 
 Example:
 
 ```bash
+cd frontend
 python3 -m http.server 4173
 ```
 
@@ -32,6 +33,25 @@ Then open:
 ```text
 http://127.0.0.1:4173/index.html
 ```
+
+## AWS Deployment
+
+Terraform lives in `../terraform` and creates a private S3 bucket, CloudFront distribution, Origin Access Control, response security headers, optional ACM certificate, and optional Route53 records.
+
+From the repository root:
+
+```bash
+cd terraform
+terraform init
+terraform fmt -check
+terraform validate
+terraform plan
+terraform apply
+cd ..
+./scripts/deploy.sh
+```
+
+`terraform.tfvars` defaults to the CloudFront domain only. To use a custom domain, set `use_custom_domain = true` and `root_domain` to an apex Route53 hosted zone such as `upsqill.com`.
 
 ## Git Version Control Workflow
 
