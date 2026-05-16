@@ -161,3 +161,4 @@ Recommended habit:
 - The waitlist form is for UX demonstration only.
 - The language toggle affects page copy, placeholders, metadata title, and metadata description.
 - Partner and address content is maintained in `script.js` so English and Thai versions stay synchronized.
+
